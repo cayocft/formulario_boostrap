@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/estilos/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .centrar{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <center>
+        <h1 class="mb-4">Formulario</h1>
+        <div class="form-group col-3 mb-4">
+            <input type="email" name="edad" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Edad">
+        </div>
+        <button type="button" class="btn btn-primary col-3" onclick="capturar()" >Enviar</button>
+        <label for="" id="label_edad"></label>
+    </center>
+    
+    <script>
+        function capturar(){
+            let label_edad = document.getElementById('label_edad');
+            let edad = document.getElementsByName('edad')[0].value;
+            label_edad.innerHTML = edad;
+        }
+    </script>
+</body>
+</html>
