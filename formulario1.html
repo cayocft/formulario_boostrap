@@ -17,17 +17,31 @@
     <center>
         <h1 class="mb-4">Formulario</h1>
         <div class="form-group col-3 mb-4">
-            <input type="email" name="edad" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Edad">
+            <input type="text" name="edad" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Edad">
+            <br><label for="" id="label_edad"></label>
         </div>
         <button type="button" class="btn btn-primary col-3" onclick="capturar()" >Enviar</button>
-        <label for="" id="label_edad"></label>
+        
     </center>
     
     <script>
         function capturar(){
             let label_edad = document.getElementById('label_edad');
             let edad = document.getElementsByName('edad')[0].value;
-            label_edad.innerHTML = edad;
+            if(isNaN(edad)){
+                label_edad.innerHTML = "ERROR de validación. Ingrese una edad Correcta";
+            }else{
+                edad = parseInt(edad);
+                if(edad >= 0){
+                    label_edad.innerHTML = "OK";
+                }else{
+                    label_edad.innerHTML = "Escriba una edad Valida";
+                }
+                
+            }
+
+
+            
         }
     </script>
 </body>
